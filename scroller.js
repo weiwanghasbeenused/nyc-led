@@ -27,7 +27,6 @@ var Scroller = (function(){
 
   (function(){
     // Lovingly borrowed from http://one.idontsmoke.co.uk/x/text/
-    // alpha stands for 'Basic Intergers and Typographic Characters displayed Horizontally'
     var alpha = new Array();
     alpha['a'] = ["00000","00000","01110","00001","01111","10001","01111"];
     alpha['b'] = ["10000","10000","11110","10001","10001","10001","11110"];
@@ -113,7 +112,11 @@ var Scroller = (function(){
 
   scroll.enqueue = function(msg){
     // assume the index is the length - 1. Risky I know.
-    return scroll._messageQueue.push(msg) - 1;
+    var current_time = scroll.currentTime(true);
+    // return scroll._messageQueue.push(msg) - 1;
+    var time_msg = current_time + " /// " + msg;
+    console.log(time_msg);
+    return scroll._messageQueue.push(time_msg) - 1;
   };
   scroll.dequeue = function(index){
     delete scroll._messageQueue[index];
@@ -121,7 +124,6 @@ var Scroller = (function(){
   scroll.clearQueue = function(){
     scroll._messageQueue = [];
   };
-
 
   scroll.start = function(){
     if(!scroll.intervalTimer){
@@ -216,6 +218,17 @@ var Scroller = (function(){
         }
       }
     }
+  };
+
+  scroll.currentTime = function (date) {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    if (date)
+        return d;
+    else
+        return h + ":" + m + ":" + s;
   };
 
   return scroll;
