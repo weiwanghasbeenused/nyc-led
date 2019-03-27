@@ -1,0 +1,46 @@
+<!doctype html>
+
+<title>New York Consolidated</title>
+
+<style>
+body {
+    margin: 0px;
+    background: #000;
+}
+div#mask {
+    position: absolute;
+    width: 400px;
+    height: 42px;
+    overflow:hidden;
+}
+div#scroller {
+    width: 720px;
+    background:#000;
+    overflow:hidden;
+}
+div#scroller div {
+    width: 4px;
+    height: 4px;
+    float: left;
+    margin: 1px;
+    background: #111;        
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+div#scroller div.on{
+    /* filter: blur(1px); */
+    background: #fff;
+}
+</style>
+
+<div id="mask">
+    <div id="scroller"></div>   
+</div>   
+    
+<script src="./scroller.js"></script>
+<script>        
+    Scroller.init('scroller', 120,7);
+    Scroller.enqueue('New York Consolidated. Wednesday, March 27, 2019 2:25 PM / 46 degrees . . . Have a nice day.');
+    Scroller.start();
+</script>
