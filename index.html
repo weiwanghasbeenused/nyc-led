@@ -12,11 +12,15 @@ body {
 }
 div#mask {
     position: absolute;
-    /* 
+    overflow: hidden;
+    /*
     width: 400px;
     height: 42px;
     */
-    overflow:hidden;
+    /* transform: scale(2,2); */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 div#scroller {
     width: 720px;
