@@ -1,8 +1,8 @@
-- css 100% width
-- web-app
-
++ web-app
 + time (o-r-g)
 + weather (whether)
+x css 100% width
+
 - subway (heroku)
   https://github.com/mimouncadosch/MTA-API
   http://mtaapi.herokuapp.com/
