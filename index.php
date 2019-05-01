@@ -1,3 +1,14 @@
+<?
+// for current temperature
+require_once('temp.php');  
+// var_dump($output);
+
+$msg  = 'New York Consolidated . . . ';
+$msg .= $output['wind_string'];
+$msg .= ' /// Currently ' . $output['temp_f'] . ' degrees.';
+$msg .= ' 0 1 2 3 4 5 6 7 8 9 Have a nice day.';
+?>
+
 <!doctype html>
 
 <title>New York Consolidated</title>
@@ -9,14 +20,19 @@ body {
     height: 100%;
     margin: 0px;
     background: #000;
+    color:#FFF;
 }
 div#mask {
     position: absolute;
-    /* 
+    overflow: hidden;
+    /*
     width: 400px;
     height: 42px;
     */
-    overflow:hidden;
+    /* transform: scale(2,2); */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 div#scroller {
     width: 720px;
@@ -47,6 +63,7 @@ div#scroller div.on{
 <script src="./scroller.js"></script>
 <script>        
     Scroller.init('scroller', 120,7);
-    Scroller.enqueue('New York Consolidated . . . Currently 46 degrees. Have a nice day.');
+    // Scroller.enqueue('New York Consolidated . . . Currently 46 degrees. Have a nice day.');
+    Scroller.enqueue('<?= $msg; ?>');
     Scroller.start();
 </script>
