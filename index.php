@@ -1,9 +1,15 @@
 <?
-// for current temperature
+// get time
+date_default_timezone_set("America/New_York");
+$now = date("h:i:sa");
+    
+// get temperature
 require_once('temp.php');  
-// var_dump($output);
+
+// assemble $msg
 
 $msg  = 'New York Consolidated . . . ';
+$msg .= $now;
 $msg .= $output['wind_string'];
 $msg .= ' /// Currently ' . $output['temp_f'] . ' degrees.';
 $msg .= ' 0 1 2 3 4 5 6 7 8 9 Have a nice day.';
@@ -19,7 +25,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    background: #000;
+    background: #CCC;
     color:#FFF;
 }
 div#mask {

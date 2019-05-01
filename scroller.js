@@ -112,11 +112,13 @@ var Scroller = (function(){
 
   scroll.enqueue = function(msg){
     // assume the index is the length - 1. Risky I know.
-    var current_time = scroll.currentTime(true);
-    // return scroll._messageQueue.push(msg) - 1;
-    var time_msg = current_time + " /// " + msg;
-    console.log(time_msg);
-    return scroll._messageQueue.push(time_msg) - 1;
+    return scroll._messageQueue.push(msg) - 1;
+
+    /* js time, now in .php */
+    // var current_time = scroll.currentTime(true);
+    // var time_msg = current_time + " /// " + msg;
+    // console.log(time_msg);
+    // return scroll._messageQueue.push(time_msg) - 1;
   };
   scroll.dequeue = function(index){
     delete scroll._messageQueue[index];
