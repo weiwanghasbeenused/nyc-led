@@ -2,7 +2,7 @@
 - web-app
 
 + time (o-r-g)
-- weather (whether)
++ weather (whether)
 - subway (heroku)
   https://github.com/mimouncadosch/MTA-API
   http://mtaapi.herokuapp.com/
